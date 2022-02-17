@@ -12,7 +12,7 @@ export const UserList = () => {
   return (
     <div className="UserList">
       <div>User List</div>
-      {userItems}
+      {userItems.length > 0 ? userItems : 'You haven`t users yet'}
     </div>
   );
 };
