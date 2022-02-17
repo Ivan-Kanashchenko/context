@@ -1,9 +1,8 @@
 import { UserListItem } from "./UserListItem/UserListItem";
-import { Context } from "../../context";
-import { useContext } from "react";
+import { useUsers } from "../../contexts/usersContext";
 
 export const UserList = () => {
-  const { userList } = useContext(Context);
+  const { userList } = useUsers();
 
   const userItems = userList.map((item, index) => (
     <UserListItem item={item} key={index} />
@@ -12,7 +11,7 @@ export const UserList = () => {
   return (
     <div className="UserList">
       <div>User List</div>
-      {userItems.length > 0 ? userItems : 'You haven`t users yet'}
+      {userItems.length > 0 ? userItems : "You haven`t users yet"}
     </div>
   );
 };

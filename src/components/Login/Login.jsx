@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { Context } from "../../context";
+import { useState } from "react";
+import { useUsers } from "../../contexts/usersContext";
 
 export const Login = () => {
   const [userName, setUserName] = useState("");
@@ -10,7 +10,7 @@ export const Login = () => {
     e.target.name === "userAge" && setUserAge(e.target.value);
   };
 
-  const { addNewUser } = useContext(Context);
+  const { addNewUser } = useUsers();
 
   const addUser = () => {
     addNewUser(userName, userAge);
